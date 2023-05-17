@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <link rel="stylesheet" href="./assets/styles/media.css">
+    <script src="index.js" defer="defer"></script>
+    <title>Kisho</title>
+</head>
+
+<body>
+    <div class="background">
+        <header class="flex justify-between items-center container">
+            <div class="flex">
+                <img src="./assets/images/logo.png" alt="logo">
+                <div>
+                    <h1 class="logo_name">Kisho</h1>
+                    <p class="description-logo">One who knows his own mind.</p>
+                </div>
+            </div>
+            <div class="flexS">
+                <label for="input-city">
+                    <input id="input-city" type="text" placeholder="Search city">
+                </label>
+                <button id="search-city">
+                    <svg width="19" height="18" viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M13.2759 7.38796C13.2759 10.6398 10.6398 13.2759 7.38796 13.2759C4.13613 13.2759 1.5 10.6398 1.5 7.38796C1.5 4.13613 4.13613 1.5 7.38796 1.5C10.6398 1.5 13.2759 4.13613 13.2759 7.38796Z"
+                            stroke="white" stroke-width="3" />
+                        <path
+                            d="M13.6202 10.7601L12.5596 9.69942L10.4383 11.8207L11.4989 12.8814L13.6202 10.7601ZM15.6782 17.0607C16.264 17.6464 17.2137 17.6464 17.7995 17.0607C18.3853 16.4749 18.3853 15.5251 17.7995 14.9393L15.6782 17.0607ZM11.4989 12.8814L15.6782 17.0607L17.7995 14.9393L13.6202 10.7601L11.4989 12.8814Z"
+                            fill="white" />
+                    </svg></button>
+            </div>
+        </header>
+        <main class="container">
+            <div class="flex items-center">
+                <div class="weather-box">
+                    <p class="data">2023, 14 May</p>
+                    <h2 class="city">London, GB</h2>
+                    <div class="flex items-center weather-icon">
+                        <img src="./assets/images/cloud-sun.png" alt="weather-icon">
+                        <h3 class="weather-temperature">9 °C</h3>
+                    </div>
+                    <p class="description-weather">Feels like 7 °C. Clouds. Few clouds</p>
+                    <div class="flex description-parameters">
+                        <div class="vertical-line"></div>
+                        <div class="first-column">
+                            <p class="wind"> <img src="./assets/images/arrow.png" alt="arrow"> 14 m/s</p>
+                            <p class="temperature">Temperature is 9 ° C</p>
+                        </div>
+                        <div>
+                            <p class="time">10:24 windy</p>
+                            <p class="place">Big Ben Square</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="upcoming-forecast">
+                    <h2 class="upcoming-forecast-title">Upcoming forecast</h2>
+                    <div class="flex flex-wrap">
+                        <div class="card-time">
+                            <img class="weather-icon-time" src="./assets/images/wind.png" alt="weather-icon">
+                            <p class="exact-time">11:30 AM</p>
+                            <p class="exact-temperature">34° C / 31° C</p>
+                        </div>
+                        <div class="card-time">
+                            <img class="weather-icon-time" src="./assets/images/clouds.png" alt="weather-icon">
+                            <p class="exact-time">2:30 AM</p>
+                            <p class="exact-temperature">34° C / 31° C</p>
+
+                        </div>
+                        <div class="card-time">
+                            <img class="weather-icon-time" src="./assets/images/clouds.png" alt="weather-icon">
+                            <p class="exact-time">5:30 AM</p>
+                            <p class="exact-temperature">34° C / 31° C</p>
+
+                        </div>
+                        <div class="card-time">
+                            <img class="weather-icon-time" src="./assets/images/storm.png" alt="weather-icon">
+                            <p class="exact-time">8:30 AM</p>
+                            <p class="exact-temperature">34° C / 31° C</p>
+
+                        </div>
+                        <div class="card-time">
+                            <img class="weather-icon-time" src="./assets/images/moon.png" alt="weather-icon">
+                            <p class="exact-time">11:30 AM</p>
+                            <p class="exact-temperature">34° C / 31° C</p>
+
+                        </div>
+                        <div class="card-time">
+                            <img class="weather-icon-time" src="./assets/images/moon.png" alt="weather-icon">
+                            <p class="exact-time">2:30 AM</p>
+                            <p class="exact-temperature">34° C / 31° C</p>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <h2 class="days-weather-title">Next 7 days forecast</h2>
+            <div class="flex flex-wrap">
+                <div class="card-day">
+                    <img class="weather-icon-day" src="./assets/images//wind.png" alt="weather-icon">
+                    <p class="exact-day">Tue May 15 2023</p>
+                    <p class="exact-temperature-day">34° C / 31° C</p>
+                </div>
+                <div class="card-day">
+                    <img class="weather-icon-day" src="./assets/images/cloud-sun.png" alt="weather-icon">
+                    <p class="exact-day">Wen May 16 2023</p>
+                    <p class="exact-temperature-day">34° C / 31° C</p>
+                </div>
+                <div class="card-day">
+                    <img class="weather-icon-day" src="./assets/images/clouds.png" alt="weather-icon">
+                    <p class="exact-day">Thus May 17 2023</p>
+                    <p class="exact-temperature-day">34° C / 31° C</p>
+                </div>
+                <div class="card-day">
+                    <img class="weather-icon-day" src="./assets/images/sun.png" alt="weather-icon">
+                    <p class="exact-day">Fri May 18 2023</p>
+                    <p class="exact-temperature-day">34° C / 31° C</p>
+                </div>
+                <div class="card-day">
+                    <img class="weather-icon-day" src="./assets/images/sun.png" alt="weather-icon">
+                    <p class="exact-day">Sat May 19 2023</p>
+                    <p class="exact-temperature-day">34° C / 31° C</p>
+                </div>
+                <div class="card-day">
+                    <img class="weather-icon-day" src="./assets/images/cloud-sun.png" alt="weather-icon">
+                    <p class="exact-day">Sun May 20 2023</p>
+                    <p class="exact-temperature-day">34° C / 31° C</p>
+                </div>
+                <div class="card-day">
+                    <img class="weather-icon-day" src="./assets/images/cloud-sun.png" alt="weather-icon">
+                    <p class="exact-day">Mon May 21 2023</p>
+                    <p class="exact-temperature-day">34° C / 31° C</p>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="./index.js" type="module"></script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+.logo_name {
+  font-family: "Montserrat-Bold", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 48px;
+  color: #fff;
+  padding-left: 5px;
+}
+
+.description-logo {
+  color: #fff;
+  padding-left: 5px;
+}
+
+#input-city {
+  border: none;
+  border-radius: 50px;
+  padding: 14px 30px;
+  width: 450px;
+  color: #1c1c1c;
+  font-size: 20px;
+}
+
+#search-city {
+  border: none;
+  background-color: #f15022;
+  width: 40px;
+  height: 40px;
+  border-radius: 50px;
+  position: absolute;
+  top: 52.5px;
+  right: 98px;
+}
+
+input:focus {
+  outline-color: #f15022;
+}
+
+::placeholder {
+  color: #7e7e7e;
+  font-size: 18px;
+}
