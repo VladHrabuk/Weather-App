@@ -19,7 +19,7 @@ html {
 }
 
 .background {
-  padding: 2rem 5rem;
+  padding: 30px 15px;
   background: linear-gradient(
       45deg,
       rgba(183, 204, 246, 0.7),
@@ -29,7 +29,6 @@ html {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  margin: 0 auto;
 }
 
 .container {
@@ -49,14 +48,6 @@ html {
   align-items: center; /* елементи розташовуються в центрі контейнера по вертикалі */
 }
 
-.text-center {
-  text-align: center; /* вирівнювання тексту по центру  */
-}
-
-.justify-content {
-  justify-content: center; /* елементи розташовуються в центрі контейнера по горизонталі */
-}
-
 .justify-between {
   justify-content: space-between; /* елементи розташовуються по краях */
 }
@@ -64,11 +55,11 @@ html {
 /* -------------------------- MAIN -------------------------------- */
 .weather-box {
   width: 600px;
-  margin-top: 100px;
+  margin-top: 30px;
   background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(10px);
   border-radius: 50px;
-  padding: 40px;
+  padding: 20px;
 }
 
 .city {
@@ -82,8 +73,12 @@ html {
   padding: 30px 0;
 }
 
+.main-weather-icon {
+  width: 90px;
+}
+
 .weather-temperature {
-  font-size: 40px;
+  font-size: 30px;
   font-weight: 700;
   line-height: 48px;
   margin-left: 20px;
@@ -124,13 +119,8 @@ html {
 
 /* ------------------------ UPCOMING-FORECAST ------------------------------------ */
 
-.upcoming-forecast {
-  max-width: 1000px;
-  height: 300px;
-  margin: 100px 0 0 100px;
-}
-
-.upcoming-forecast-title {
+.upcoming-forecast-title,
+.days-weather-title {
   margin-bottom: 30px;
   font-size: 40px;
   font-weight: 700;
@@ -138,6 +128,7 @@ html {
 }
 
 .card-time {
+  width: 120px;
   height: 190px;
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
@@ -149,7 +140,8 @@ html {
 
 .weather-icon-time,
 .weather-icon-day {
-  margin: 20px 0;
+  margin: 20px 0 15px 0;
+  width: 70px;
 }
 
 .exact-time,
@@ -162,7 +154,7 @@ html {
 
 .exact-temperature,
 .exact-temperature-day {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
   font-size: 16px;
   line-height: 18px;
 }
@@ -170,9 +162,6 @@ html {
 /* ----------------------- NEXT 7 DAYS FORECAST -------------------------------------- */
 .days-weather-title {
   margin: 60px 0 30px 0;
-  font-size: 40px;
-  font-weight: 700;
-  line-height: 48px;
 }
 
 .card-day {
@@ -181,7 +170,15 @@ html {
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(10px);
   border-radius: 20px;
-  margin-right: 40px;
-  margin-bottom: 20px;
+  margin: 0 40px 20px 0;
   text-align: center;
+}
+
+/* ------------------------------ SWIPER --------------------------------------------- */
+.time-swiper {
+  margin-top: 20px;
+  width: 300px;
+}
+.swiper {
+  width: 300px;
 }

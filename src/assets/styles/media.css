@@ -1,0 +1,70 @@
+@media screen and (min-width: 561px) {
+  .hidden-all {
+    display: none;
+  }
+  .background {
+    padding: 30px;
+  }
+  .flex-wrap-media {
+    flex-wrap: wrap;
+  }
+  .input-city-class {
+    width: 450px;
+  }
+  .upcoming-forecast {
+    margin: 0;
+    height: auto;
+  }
+  .upcoming-forecast-title {
+    margin: 60px 0 30px 0;
+  }
+  .align {
+    align-items: flex-start;
+  }
+  .weather-box {
+    margin-top: 50px;
+    padding: 40px;
+  }
+}
+
+@media screen and (max-width: 560px) {
+  .hidden-container {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 860px) {
+  .logo_name {
+    font-size: 48px;
+  }
+  .description-logo {
+    font-size: 18px;
+  }
+  .exact-temperature,
+  .exact-temperature-day {
+    margin-bottom: 15px;
+  }
+  .weather-temperature {
+    font-size: 40px;
+  }
+}
+
+@media screen and (min-width: 1120px) {
+  .background {
+    padding: 2rem 5rem;
+  }
+  .weather-box {
+    margin: 100px 100px 0 0;
+  }
+}
+
+@media screen and (min-width: 1950px) {
+  .card-day {
+    width: 230px;
+    height: 210px;
+  }
+  .card-time {
+    width: 140px;
+    height: 210px;
+  }
+}
