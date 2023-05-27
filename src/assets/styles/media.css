@@ -52,19 +52,23 @@
 @media screen and (min-width: 1120px) {
   .background {
     padding: 2rem 5rem;
+    min-height: 100vh;
   }
   .weather-box {
     margin: 100px 100px 0 0;
   }
+  .card-time {
+    width: 160px;
+    height: 240px;
+  }
 }
 
 @media screen and (min-width: 1950px) {
-  .card-day {
-    width: 230px;
-    height: 210px;
-  }
   .card-time {
-    width: 140px;
-    height: 210px;
+    width: 180px;
+    height: 260px;
+  }
+  .background {
+    height: 100%;
   }
 }

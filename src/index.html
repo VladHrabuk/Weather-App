@@ -13,6 +13,7 @@
 </head>
 
 <body>
+    <div id="preloader"></div>
     <div class="background">
         <header class="flex justify-between items-center container flex-wrap">
             <div class="flex">
@@ -40,25 +41,25 @@
         <main class="container">
             <div class="flex items-center flex-wrap-media">
                 <div class="weather-box">
-                    <p class="data">2023, 14 May</p>
-                    <h2 class="city">London, GB</h2>
+                    <p class="data"></p>
+                    <h2 class="city">City name</h2>
                     <div class="flex items-center weather-icon">
-                        <img class="main-weather-icon" src="./assets/images/cloud-sun.png" alt="weather-icon">
-                        <h3 class="weather-temperature">9 °C</h3>
+                        <img class="main-weather-icon" src="#" alt="weather-icon">
+                        <h3 class="weather-temperature">temperature</h3>
                     </div>
-                    <p class="description-weather">Feels like 7 °C. Clouds. Few clouds</p>
+                    <p class="description-weather"></p>
                     <div class="flex description-parameters">
                         <div class="vertical-line"></div>
                         <div class="first-column">
                             <p class="flex items-center">
                                 <img class="arrow" src="./assets/images/arrow.png" alt="arrow">
-                                <span class="wind"> 14 m/s</span>
+                                <span class="wind"></span>
                             </p>
-                            <p class="visibility">Temperature is 9 ° C</p>
+                            <p class="visibility"></p>
                         </div>
                         <div>
-                            <p class="pressure">Pressure 1000 hPa</p>
-                            <p class="humidity">Humidity 30 %</p>
+                            <p class="pressure"></p>
+                            <p class="humidity"></p>
                         </div>
                     </div>
                 </div>
@@ -67,28 +68,33 @@
                         <h2 class="upcoming-forecast-title">Upcoming forecast</h2>
                         <div class="flex flex-wrap align">
                             <div class="card-time">
-                                <img class="weather-icon-time" src="./assets/images/wind.png" alt="weather-icon">
+                                <img class="weather-icon-time" src="#" alt="weather-icon">
                                 <p class="exact-time">11:30 AM</p>
+                                <p class="time-description">Overcast clouds</p>
                                 <p class="exact-temperature">34° C / 31° C</p>
                             </div>
                             <div class="card-time">
-                                <img class="weather-icon-time" src="./assets/images/clouds.png" alt="weather-icon">
+                                <img class="weather-icon-time" src="#" alt="weather-icon">
                                 <p class="exact-time">2:30 AM</p>
+                                <p class="time-description">Scattered clouds</p>
                                 <p class="exact-temperature">34° C / 31° C</p>
                             </div>
                             <div class="card-time">
-                                <img class="weather-icon-time" src="./assets/images/clouds.png" alt="weather-icon">
+                                <img class="weather-icon-time" src="#" alt="weather-icon">
                                 <p class="exact-time">5:30 AM</p>
+                                <p class="time-description">Scattered clouds</p>
                                 <p class="exact-temperature">34° C / 31° C</p>
                             </div>
                             <div class="card-time">
-                                <img class="weather-icon-time" src="./assets/images/storm.png" alt="weather-icon">
+                                <img class="weather-icon-time" src="#" alt="weather-icon">
                                 <p class="exact-time">8:30 AM</p>
+                                <p class="time-description">Light rain</p>
                                 <p class="exact-temperature">34° C / 31° C</p>
                             </div>
                             <div class="card-time">
-                                <img class="weather-icon-time" src="./assets/images/moon.png" alt="weather-icon">
+                                <img class="weather-icon-time" src="#" alt="weather-icon">
                                 <p class="exact-time">11:30 AM</p>
+                                <p class="time-description">Clear sky</p>
                                 <p class="exact-temperature">34° C / 31° C</p>
                             </div>
                         </div>
@@ -99,28 +105,33 @@
                 <div class="time-swiper swiper mySwiper">
                     <div class="swiper-wrapper">
                         <div class="card-time swiper-slide">
-                            <img class="weather-icon-time" src="./assets/images/wind.png" alt="weather-icon">
+                            <img class="weather-icon-time" src="#" alt="weather-icon">
                             <p class="exact-time">11:30 AM</p>
+                            <p class="time-description">Overcast clouds</p>
                             <p class="exact-temperature">34° C / 31° C</p>
                         </div>
                         <div class="card-time swiper-slide">
-                            <img class="weather-icon-time" src="./assets/images/clouds.png" alt="weather-icon">
+                            <img class="weather-icon-time" src="#" alt="weather-icon">
                             <p class="exact-time">2:30 AM</p>
+                            <p class="time-description">Scattered clouds</p>
                             <p class="exact-temperature">34° C / 31° C</p>
                         </div>
                         <div class="card-time swiper-slide">
-                            <img class="weather-icon-time" src="./assets/images/clouds.png" alt="weather-icon">
+                            <img class="weather-icon-time" src="#" alt="weather-icon">
                             <p class="exact-time">5:30 AM</p>
+                            <p class="time-description">Scattered clouds</p>
                             <p class="exact-temperature">34° C / 31° C</p>
                         </div>
                         <div class="card-time swiper-slide">
-                            <img class="weather-icon-time" src="./assets/images/storm.png" alt="weather-icon">
+                            <img class="weather-icon-time" src="#" alt="weather-icon">
                             <p class="exact-time">8:30 AM</p>
+                            <p class="time-description">Light rain</p>
                             <p class="exact-temperature">34° C / 31° C</p>
                         </div>
                         <div class="card-time swiper-slide">
-                            <img class="weather-icon-time" src="./assets/images/moon.png" alt="weather-icon">
+                            <img class="weather-icon-time" src="#" alt="weather-icon">
                             <p class="exact-time">11:30 AM</p>
+                            <p class="time-description">Clear sky</p>
                             <p class="exact-temperature">34° C / 31° C</p>
                         </div>
                     </div>
@@ -131,25 +142,40 @@
                 </div>
             </div>
             <div class="hidden-container">
-                <h2 class="days-weather-title">Next 4 days forecast</h2>
+                <h2 class="days-weather-title">Next 7 days forecast</h2>
                 <div class="flex flex-wrap">
                     <div class="card-day">
-                        <img class="weather-icon-day" src="./assets/images//wind.png" alt="weather-icon">
+                        <img class="weather-icon-day" src="#" alt="weather-icon">
                         <p class="exact-day">Tue May 15 2023</p>
                         <p class="exact-temperature-day">34° C / 31° C</p>
                     </div>
                     <div class="card-day">
-                        <img class="weather-icon-day" src="./assets/images/cloud-sun.png" alt="weather-icon">
+                        <img class="weather-icon-day" src="#" alt="weather-icon">
                         <p class="exact-day">Wen May 16 2023</p>
                         <p class="exact-temperature-day">34° C / 31° C</p>
                     </div>
                     <div class="card-day">
-                        <img class="weather-icon-day" src="./assets/images/clouds.png" alt="weather-icon">
+                        <img class="weather-icon-day" src="#" alt="weather-icon">
                         <p class="exact-day">Thus May 17 2023</p>
                         <p class="exact-temperature-day">34° C / 31° C</p>
                     </div>
                     <div class="card-day">
-                        <img class="weather-icon-day" src="./assets/images/sun.png" alt="weather-icon">
+                        <img class="weather-icon-day" src="#" alt="weather-icon">
+                        <p class="exact-day">Fri May 18 2023</p>
+                        <p class="exact-temperature-day">34° C / 31° C</p>
+                    </div>
+                    <div class="card-day">
+                        <img class="weather-icon-day" src="#" alt="weather-icon">
+                        <p class="exact-day">Fri May 18 2023</p>
+                        <p class="exact-temperature-day">34° C / 31° C</p>
+                    </div>
+                    <div class="card-day">
+                        <img class="weather-icon-day" src="#" alt="weather-icon">
+                        <p class="exact-day">Fri May 18 2023</p>
+                        <p class="exact-temperature-day">34° C / 31° C</p>
+                    </div>
+                    <div class="card-day">
+                        <img class="weather-icon-day" src="#" alt="weather-icon">
                         <p class="exact-day">Fri May 18 2023</p>
                         <p class="exact-temperature-day">34° C / 31° C</p>
                     </div>
@@ -157,24 +183,39 @@
             </div>
             <div class="hidden-all">
                 <div class="swiper mySwiper">
-                    <div class="swiper-wrapper">
+                    <div class="swiper-wrapper" id="cardContainer">
                         <div class="card-day swiper-slide">
-                            <img class="weather-icon-day" src="./assets/images//wind.png" alt="weather-icon">
+                            <img class="weather-icon-day" src="#" alt="weather-icon">
                             <p class="exact-day">Tue May 15 2023</p>
                             <p class="exact-temperature-day">34° C / 31° C</p>
                         </div>
                         <div class="card-day swiper-slide">
-                            <img class="weather-icon-day" src="./assets/images/cloud-sun.png" alt="weather-icon">
+                            <img class="weather-icon-day" src="#" alt="weather-icon">
                             <p class="exact-day">Wen May 16 2023</p>
                             <p class="exact-temperature-day">34° C / 31° C</p>
                         </div>
                         <div class="card-day swiper-slide">
-                            <img class="weather-icon-day" src="./assets/images/clouds.png" alt="weather-icon">
+                            <img class="weather-icon-day" src="#" alt="weather-icon">
                             <p class="exact-day">Thus May 17 2023</p>
                             <p class="exact-temperature-day">34° C / 31° C</p>
                         </div>
                         <div class="card-day swiper-slide">
-                            <img class="weather-icon-day" src="./assets/images/sun.png" alt="weather-icon">
+                            <img class="weather-icon-day" src="#" alt="weather-icon">
+                            <p class="exact-day">Fri May 18 2023</p>
+                            <p class="exact-temperature-day">34° C / 31° C</p>
+                        </div>
+                        <div class="card-day swiper-slide">
+                            <img class="weather-icon-day" src="#" alt="weather-icon">
+                            <p class="exact-day">Fri May 18 2023</p>
+                            <p class="exact-temperature-day">34° C / 31° C</p>
+                        </div>
+                        <div class="card-day swiper-slide">
+                            <img class="weather-icon-day" src="#" alt="weather-icon">
+                            <p class="exact-day">Fri May 18 2023</p>
+                            <p class="exact-temperature-day">34° C / 31° C</p>
+                        </div>
+                        <div class="card-day swiper-slide">
+                            <img class="weather-icon-day" src="#" alt="weather-icon">
                             <p class="exact-day">Fri May 18 2023</p>
                             <p class="exact-temperature-day">34° C / 31° C</p>
                         </div>
@@ -187,7 +228,7 @@
         </main>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
-    <script src="./slider.js"></script>
+    <script src="./modules/slider.js"></script>
 </body>
 
 </html>

@@ -1,6 +1,7 @@
-import { hourForecast } from "./hourForecast.js";
-import { dayForecast } from "./daysForecast.js";
-const apikey = "51a69699ffd7a56062d563e3a38075dc";
+import { hourForecast } from "./modules/hourForecast.js";
+import { dayForecast } from "./modules/daysForecast.js";
+import { apikey } from "./modules/apiKey.js";
+import { getDate, getTime } from "./modules/date.js";
 
 let inputCity = document.querySelector(".input-city-class");
 let sendButton = document.querySelector(".search-city");
@@ -13,40 +14,16 @@ let windSpeed = document.querySelector(".wind");
 let visibility = document.querySelector(".visibility");
 let pressure = document.querySelector(".pressure");
 let humidity = document.querySelector(".humidity");
-let weatherIconTime = document.querySelector(".weather-icon-time");
-let exactTemperature = document.querySelector(".exact-temperature");
-let weatherIconDay = document.querySelector(".weather-icon-day");
-let exactDay = document.querySelectorAll(".exact-day");
-let exactTemperatureDay = document.querySelector(".exact-temperature-day");
+const loader = document.getElementById("preloader");
 
 function convertionDegree(degree) {
   return (degree - 273).toFixed(1);
 }
 
-function getData() {
-  const currentDate = new Date();
-  const year = currentDate.getFullYear();
-  const month = currentDate.toLocaleString("en-us", { month: "long" });
-  const day = currentDate.getDate();
-  return year + " " + day + " " + month;
-}
-
-function getTime() {
-  const hours = currentDate.getHours();
-  const minutes = currentDate.getMinutes();
-  return `${hours}:${minutes < 10 ? "0" : ""}${minutes}`;
-}
-
-let currentDate = new Date();
-let year = currentDate.getFullYear();
-let month = currentDate.toLocaleString("en-us", { month: "long" });
-let day = currentDate.getDate();
-const hours = currentDate.getHours();
-const minutes = currentDate.getMinutes();
-const formattedTime = `${hours}:${minutes < 10 ? "0" : ""}${minutes}`;
-let formattedDate = year + " " + day + " " + month;
-
 window.addEventListener("load", () => {
+  const preloader = document.getElementById("preloader");
+  preloader.style.display = "none";
+
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition((position) => {
       let longitude = position.coords.longitude;
@@ -56,15 +33,58 @@ window.addEventListener("load", () => {
         `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&` +
         `lon=${longitude}&appid=${apikey}`;
 
+      const urlCoordinateDaily = `http://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude}&lon=${longitude}&cnt=8&appid=${apikey}`;
+
       fetch(urlCoordinate)
         .then((res) => {
+          if (!res.ok) throw new Error(res.statusText);
           return res.json();
         })
         .then((data) => {
           console.log("API call by coordinates", data);
           weatherReport(data);
         });
+
+      fetch(urlCoordinateDaily)
+        .then((res) => {
+          if (!res.ok) throw new Error(res.statusText);
+          return res.json();
+        })
+        .then((data) => {
+          console.log("API call by coordinates (daily)", data);
+          weatherReportDaily(data);
+        });
     });
+  } else {
+    const urlDefault =
+      `http://api.openweathermap.org/data/2.5/weather?q=London&` +
+      `appid=${apikey}`;
+
+    const urlDefaultDaily = `http://api.openweathermap.org/data/2.5/forecast/daily?q=London&cnt=8&appid=${apikey}`;
+
+    fetch(urlDefault)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Error: " + res.status);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log("API call default", data);
+        weatherReport(data);
+      });
+
+    fetch(urlDefaultDaily)
+      .then((res) => {
+        if (!res.ok) {
+          throw new Error("Error: " + res.status);
+        }
+        return res.json();
+      })
+      .then((data) => {
+        console.log("API call default (daily)", data);
+        weatherReportDaily(data);
+      });
   }
 });
 
@@ -75,13 +95,30 @@ sendButton.onclick = function (event) {
     `http://api.openweathermap.org/data/2.5/weather?q=${inputCity.value}&` +
     `appid=${apikey}`;
 
+  const urlSearchDaily = `http://api.openweathermap.org/data/2.5/forecast/daily?q=${inputCity.value}&cnt=8&appid=${apikey}`;
+
   fetch(urlSearch)
     .then((res) => {
+      if (!res.ok) {
+        throw new Error("Error: " + res.status);
+      }
       return res.json();
     })
     .then((data) => {
       console.log("API call by city name", data);
       weatherReport(data);
+    });
+
+  fetch(urlSearchDaily)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Error: " + res.status);
+      }
+      return res.json();
+    })
+    .then((data) => {
+      console.log("API call by city name (daily)", data);
+      weatherReportDaily(data);
     });
   inputCity.value = "";
 };
@@ -93,18 +130,21 @@ function weatherReport(data) {
 
   fetch(urlCity)
     .then((res) => {
+      if (!res.ok) {
+        throw new Error("Error: " + res.status);
+      }
       return res.json();
     })
     .then((forecast) => {
       console.log("City name", forecast.city);
-      hourForecast(forecast);
-      dayForecast(forecast);
+      hourForecast(forecast, ".hidden-all");
+      hourForecast(forecast, ".hidden-container");
 
-      exactData.innerText = `${formattedDate}, ${formattedTime}`;
+      exactData.innerText = `${getDate()}, ${getTime()}`;
       cityName.innerText = `${data.name}, ${data.sys.country}`;
       weatherTemperature.innerText = `${convertionDegree(data.main.temp)} °C`;
       let icon = data.weather[0].icon;
-      let iconUrl = "http://api.openweathermap.org/img/w/" + icon + ".png";
+      let iconUrl = "https://openweathermap.org/img/wn/" + icon + ".png";
       mainWeatherIcon.src = iconUrl;
 
       descriptionWeather.innerText = `Feel like ${convertionDegree(
@@ -115,5 +155,22 @@ function weatherReport(data) {
       visibility.innerHTML = `Visability is ${data.visibility} meters`;
       pressure.innerText = `Pressure ${data.main.pressure} hPa`;
       humidity.innerText = `Humidity ${data.main.humidity} %`;
+    });
+}
+
+function weatherReportDaily(data) {
+  const urlCityDaily = `http://api.openweathermap.org/data/2.5/forecast/daily?q=${data.city.name}&cnt=8&appid=${apikey}`;
+
+  fetch(urlCityDaily)
+    .then((res) => {
+      if (!res.ok) {
+        throw new Error("Error: " + res.status);
+      }
+      return res.json();
+    })
+    .then((forecast) => {
+      console.log("City name", forecast.city);
+      dayForecast(forecast, ".hidden-all");
+      dayForecast(forecast, ".hidden-container");
     });
 }
