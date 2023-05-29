@@ -1,4 +1,5 @@
 @import url(./header.css);
+@import url(../fonts/font.css);
 
 :root {
   --color-white: #fff;

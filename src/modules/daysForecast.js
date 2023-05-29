@@ -39,9 +39,7 @@ export function dayForecast(forecast, className) {
     // const hours = date.getHours();
     // const minutes = date.getMinutes();
     // const seconds = date.getSeconds();
-
     // const formattedDate = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
-
     // console.log("Date:", formattedDate);
   }
 }

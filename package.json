@@ -1,0 +1,46 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "description": "Weather-App is an app with reliable weather information",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack serve --open",
+    "build-dev": "webpack",
+    "build-prod": "webpack --node-env=production",
+    "clear": "rd /s /q dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/VladHrabuk/Weather-App.git"
+  },
+  "author": "Vlad Hrabyk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/VladHrabuk/Weather-App/issues"
+  },
+  "homepage": "https://github.com/VladHrabuk/Weather-App#readme",
+  "dependencies": {
+    "bootbox": "^6.0.0",
+    "bootstrap": "^5.2.3",
+    "jquery": "^3.7.0",
+    "swiper": "^9.3.2",
+    "swiper-bundle": "0.0.1-security"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.22.1",
+    "@babel/preset-env": "^7.22.2",
+    "babel-loader": "^9.1.2",
+    "copy-webpack-plugin": "^11.0.0",
+    "css-loader": "^6.8.1",
+    "file-loader": "^6.2.0",
+    "html-loader": "^4.2.0",
+    "html-webpack-plugin": "^5.5.1",
+    "image-webpack-loader": "^8.1.0",
+    "mini-css-extract-plugin": "^2.7.6",
+    "style-loader": "^3.3.3",
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
+  }
+}

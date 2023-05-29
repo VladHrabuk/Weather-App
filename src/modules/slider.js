@@ -1,4 +1,6 @@
-const swiper = new Swiper(".mySwiper", {
+import Swiper from "swiper/bundle";
+
+export const swiper = new Swiper(".mySwiper", {
   slidesPerView: 1,
   spaceBetween: 30,
   loop: true,
