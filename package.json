@@ -7,7 +7,7 @@
   "scripts": {
     "start": "webpack serve --open",
     "build-dev": "webpack",
-    "build-prod": "webpack --node-env=production",
+    "build-prod": "webpack --mode=production",
     "clear": "rd /s /q dist"
   },
   "repository": {
@@ -21,9 +21,6 @@
   },
   "homepage": "https://github.com/VladHrabuk/Weather-App#readme",
   "dependencies": {
-    "bootbox": "^6.0.0",
-    "bootstrap": "^5.2.3",
-    "jquery": "^3.7.0",
     "swiper": "^9.3.2",
     "swiper-bundle": "0.0.1-security"
   },

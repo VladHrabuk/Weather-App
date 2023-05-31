@@ -70,6 +70,7 @@ export default {
     new HtmlWebpackPlugin({
       template: resolve(__dirname, "./src/index.html"),
       filename: "index.html",
+      favicon: "./src/assets/favicons/favicon.ico",
       minify: true,
     }),
     new MiniCssExtractPlugin({
@@ -77,6 +78,7 @@ export default {
     }),
     new CopyWebpackPlugin({
       patterns: [{ from: "./src/assets/images", to: "assets/images" }],
+      patterns: [{ from: "./src/assets/favicons", to: "assets/images" }],
     }),
   ],
 };

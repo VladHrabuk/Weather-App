@@ -12,14 +12,14 @@ export function dayForecast(forecast, className) {
       className + " .exact-temperature-day"
     );
 
-    console.log(`${minDayTemperature} °C / ${maxDayTemperature} °C`);
+    // console.log(`${minDayTemperature} °C / ${maxDayTemperature} °C`);
 
     if (i < exactTemperatureDays.length) {
       let exactTemperatureDay = exactTemperatureDays[i];
       exactTemperatureDay.innerText = `${minDayTemperature} °C / ${maxDayTemperature} °C`;
     }
 
-    console.log(forecast.list[i].weather[0].description);
+    // console.log(forecast.list[i].weather[0].description);
 
     let weatherIconDays = document.querySelectorAll(
       className + " .weather-icon-day"
