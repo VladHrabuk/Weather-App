@@ -4,7 +4,7 @@ import webpack from "webpack";
 import HtmlWebpackPlugin from "html-webpack-plugin";
 import MiniCssExtractPlugin from "mini-css-extract-plugin";
 import CopyWebpackPlugin from "copy-webpack-plugin";
-
+import Dotenv from "dotenv-webpack";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default {
@@ -80,5 +80,6 @@ export default {
       patterns: [{ from: "./src/assets/images", to: "assets/images" }],
       patterns: [{ from: "./src/assets/favicons", to: "assets/images" }],
     }),
+    new Dotenv({}),
   ],
 };
