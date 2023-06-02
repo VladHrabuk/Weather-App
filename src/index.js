@@ -28,10 +28,10 @@ window.addEventListener("load", () => {
   preloader.style.display = "none";
 
   const urlDefault =
-    `http://api.openweathermap.org/data/2.5/weather?q=London&` +
+    `https://api.openweathermap.org/data/2.5/weather?q=London&` +
     `appid=${apikey}`;
 
-  const urlDefaultDaily = `http://api.openweathermap.org/data/2.5/forecast/daily?q=London&cnt=8&appid=${apikey}`;
+  const urlDefaultDaily = `https://api.openweathermap.org/data/2.5/forecast/daily?q=London&cnt=8&appid=${apikey}`;
 
   fetch(urlDefault)
     .then((res) => {
@@ -63,10 +63,10 @@ window.addEventListener("load", () => {
       let latitude = position.coords.latitude;
       console.log("Широта: " + latitude + ", Довгота: " + longitude);
       const urlCoordinate =
-        `http://api.openweathermap.org/data/2.5/weather?lat=${latitude}&` +
+        `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&` +
         `lon=${longitude}&appid=${apikey}`;
 
-      const urlCoordinateDaily = `http://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude}&lon=${longitude}&cnt=8&appid=${apikey}`;
+      const urlCoordinateDaily = `https://api.openweathermap.org/data/2.5/forecast/daily?lat=${latitude}&lon=${longitude}&cnt=8&appid=${apikey}`;
 
       fetch(urlCoordinate)
         .then((res) => {
@@ -95,10 +95,10 @@ sendButton.onclick = function (event) {
   event.preventDefault();
 
   const urlSearch =
-    `http://api.openweathermap.org/data/2.5/weather?q=${inputCity.value}&` +
+    `https://api.openweathermap.org/data/2.5/weather?q=${inputCity.value}&` +
     `appid=${apikey}`;
 
-  const urlSearchDaily = `http://api.openweathermap.org/data/2.5/forecast/daily?q=${inputCity.value}&cnt=8&appid=${apikey}`;
+  const urlSearchDaily = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${inputCity.value}&cnt=8&appid=${apikey}`;
 
   fetch(urlSearch)
     .then((res) => {
@@ -135,7 +135,7 @@ sendButton.onclick = function (event) {
 
 function weatherReport(data) {
   const urlCity =
-    `http://api.openweathermap.org/data/2.5/forecast?q=${data.name}&` +
+    `https://api.openweathermap.org/data/2.5/forecast?q=${data.name}&` +
     `appid=${apikey}`;
 
   fetch(urlCity)
@@ -169,7 +169,7 @@ function weatherReport(data) {
 }
 
 function weatherReportDaily(data) {
-  const urlCityDaily = `http://api.openweathermap.org/data/2.5/forecast/daily?q=${data.city.name}&cnt=8&appid=${apikey}`;
+  const urlCityDaily = `https://api.openweathermap.org/data/2.5/forecast/daily?q=${data.city.name}&cnt=8&appid=${apikey}`;
 
   fetch(urlCityDaily)
     .then((res) => {
