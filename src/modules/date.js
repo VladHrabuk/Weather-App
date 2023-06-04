@@ -13,5 +13,5 @@ export function getTime() {
   return `${hours}:${minutes < 10 ? "0" : ""}${minutes}`;
 }
 
-console.log(getDate());
-console.log(getTime());
+// console.log(getDate());
+// console.log(getTime());

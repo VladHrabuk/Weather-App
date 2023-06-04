@@ -80,6 +80,6 @@ export default {
       patterns: [{ from: "./src/assets/images", to: "assets/images" }],
       patterns: [{ from: "./src/assets/favicons", to: "assets/images" }],
     }),
-    new Dotenv({}),
+    new Dotenv(),
   ],
 };

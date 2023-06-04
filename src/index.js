@@ -2,9 +2,9 @@ import "./assets/styles/main.css";
 import "./assets/styles/media.css";
 import "./modules/slider.js";
 import "swiper/swiper-bundle.min.css";
+import { apikey } from "./modules/apiKey.js";
 import { hourForecast } from "./modules/hourForecast.js";
 import { dayForecast } from "./modules/daysForecast.js";
-import { apikey } from "./modules/apiKey.js";
 import { getDate, getTime } from "./modules/date.js";
 
 let inputCity = document.querySelector(".input-city-class");
@@ -41,7 +41,7 @@ window.addEventListener("load", () => {
       return res.json();
     })
     .then((data) => {
-      console.log("API call default", data);
+      // console.log("API call default", data);
       weatherReport(data);
     });
 
@@ -53,7 +53,7 @@ window.addEventListener("load", () => {
       return res.json();
     })
     .then((data) => {
-      console.log("API call default (daily)", data);
+      // console.log("API call default (daily)", data);
       weatherReportDaily(data);
     });
 
@@ -61,7 +61,7 @@ window.addEventListener("load", () => {
     navigator.geolocation.getCurrentPosition((position) => {
       let longitude = position.coords.longitude;
       let latitude = position.coords.latitude;
-      console.log("Широта: " + latitude + ", Довгота: " + longitude);
+      // console.log("Широта: " + latitude + ", Довгота: " + longitude);
       const urlCoordinate =
         `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&` +
         `lon=${longitude}&appid=${apikey}`;
@@ -74,7 +74,7 @@ window.addEventListener("load", () => {
           return res.json();
         })
         .then((data) => {
-          console.log("API call by coordinates", data);
+          // console.log("API call by coordinates", data);
           weatherReport(data);
         });
 
@@ -84,7 +84,7 @@ window.addEventListener("load", () => {
           return res.json();
         })
         .then((data) => {
-          console.log("API call by coordinates (daily)", data);
+          // console.log("API call by coordinates (daily)", data);
           weatherReportDaily(data);
         });
     });
@@ -108,7 +108,7 @@ sendButton.onclick = function (event) {
       return res.json();
     })
     .then((data) => {
-      console.log("API call by city name", data);
+      // console.log("API call by city name", data);
       weatherReport(data);
       inputCity.value = "";
     })
@@ -125,7 +125,7 @@ sendButton.onclick = function (event) {
       return res.json();
     })
     .then((data) => {
-      console.log("API call by city name (daily)", data);
+      // console.log("API call by city name (daily)", data);
       weatherReportDaily(data);
     })
     .catch((error) => {
@@ -146,7 +146,7 @@ function weatherReport(data) {
       return res.json();
     })
     .then((forecast) => {
-      console.log("City name", forecast.city);
+      // console.log("City name", forecast.city);
       hourForecast(forecast, ".hidden-all");
       hourForecast(forecast, ".hidden-container");
 
@@ -179,7 +179,7 @@ function weatherReportDaily(data) {
       return res.json();
     })
     .then((forecast) => {
-      console.log("City name", forecast.city);
+      // console.log("City name", forecast.city);
       dayForecast(forecast, ".hidden-all");
       dayForecast(forecast, ".hidden-container");
     });
