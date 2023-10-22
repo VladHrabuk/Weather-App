@@ -15,5 +15,5 @@
 
 **_Link to the layout:_** [layout_Kisho](https://www.figma.com/file/0wLqREQvgBMxkFUcabxL5P/Weather-App?type=design&node-id=0-1&mode=design&t=d9BLAqNRvQSQboVS-0)
 
-**_Link to the site:_** [Kisho](https://kisho.netlify.app)
+**_Link to the site:_** [Kisho](https://kisho.netlify.app/)
 
